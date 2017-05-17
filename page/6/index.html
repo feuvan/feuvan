@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/page/6/index.html">
+<meta property="og:url" content="http://feuvan.github.io/page/6/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
@@ -53,337 +53,13 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://feuvan.github.io"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-get-rid-of-boring-beep-sound" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/05/15/get-rid-of-boring-beep-sound/" class="article-date">
-  <time datetime="2007-05-14T18:58:27.000Z" itemprop="datePublished">2007-05-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/05/15/get-rid-of-boring-beep-sound/">get rid of boring &quot;beep&quot; sound</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I’ve installed a fresh Vista, but sound card left unwork.<br>But I hate the boring beep sound.<br>So execute the commands:<br><code>sc stop beep
-sc config beep start= disabled</code><br>if you love it… (who will?)<br><code>sc config beep start= auto
-sc start beep</code></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/05/15/get-rid-of-boring-beep-sound/" data-id="cj2sgynzf003ex78el02xqm43" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-solve-the-unable-to-debug-the-binding-handle-is-invalid-problem" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/05/14/solve-the-unable-to-debug-the-binding-handle-is-invalid-problem/" class="article-date">
-  <time datetime="2007-05-14T01:07:56.000Z" itemprop="datePublished">2007-05-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/05/14/solve-the-unable-to-debug-the-binding-handle-is-invalid-problem/">Solve the &#39;Unable to Debug: The Binding Handle Is Invalid&#39; problem</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>If you have disabled service “Terminal Services”, you will get the error as title when you try to start debug in Visual Studio 2005.<br>Just enable “Terminal Services”, don’t worry, it won’t be a security hole. You can uncheck “enable remote desktop” in “My computer” property window.<br>or you can try the way below:<br>`<br>b.hesse@MSDN forum<br>I had the same problem, solved it by disabling the “Visual Studio hosting process”<br>(“Project” -&gt; “[ProjectName] Properties..”. -&gt; “Debug” -&gt; Disable “Enable the Visual Studio hosting process”)</p>
-<p>Whats the purpose of this “Visual Studio hosting process” ?<br>`<br>Anyway, this is not recommended.</p>
-<p>The reason why VS2005 need the “Terminal Services” to debug can be found at the <a href="http://blogs.msdn.com/greggm/archive/2006/01/04/509243.aspx" target="_blank" rel="external">greggm’s msdn blog</a>.<br>For a short description, the debug function relys on an API call: WTSEnumerateProcess in Wtsapi32.dll which relies on “Terminal Services” as you can guess, to do process listing job.<br>More eg., if you disabled the service, you can’t see process owner in Task Manager. And this is sth more described in the blog entry by microsoft guy: “The Terminal Services service is enabled by default because in addition to the Remote Desktop functionality, it also provides for Remote Assistance, Fast User Switching, process listing, DCOM support, and probably lots of other stuff that I don’t know about because I don’t work on the TS team.”</p>
-<p>So just enable and start the service “Terminal Services” and get out of the strange error. Start your dummy debugging happily!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/05/14/solve-the-unable-to-debug-the-binding-handle-is-invalid-problem/" data-id="cj2sgynzd0038x78ehu35tckm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-a-trick-to-ie7pro-plugin-accuweather-user" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/05/14/a-trick-to-ie7pro-plugin-accuweather-user/" class="article-date">
-  <time datetime="2007-05-14T00:07:43.000Z" itemprop="datePublished">2007-05-14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/05/14/a-trick-to-ie7pro-plugin-accuweather-user/">A trick to IE7Pro plugin: AccuWeather users</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>If you can’t change location of your AccuWeather plugin for <a href="http://www.ie7pro.com/" target="_blank" rel="external">IE7pro “the Ultimate Add-on for Internet Explorer 7”</a>, You can just edit C:\Program Files\IE7Pro\plugins\accuweather\plugin.js,<br>Change line 78<br><code>var mylocation=PRO_getValue(&quot;weather_Location&quot;,&quot;10001&quot;);</code><br>to<br><code>var mylocation=PRO_getValue(&quot;weather_Location&quot;,&quot;ASI|CN|CH002|BEIJING&quot;);</code><br>You will get weather city code setted to Beijing, China.</p>
-<p>You can lookup your city weather code from <a href="http://wwwa.accuweather.com/world-city-list.asp" target="_blank" rel="external">here</a>, then you may jump to your city’s weather page.<br>Look at the url! It looks like:<code>http://wwwa.accuweather.com/world-index-forecast.asp?partner=netweather&amp;traveler;=0&amp;locCode;=ASI|CN|CH002|BEIJING</code><br>So, locCode=ASI|CN|CH002|BEIJING indicates your city code is ASI|CN|CH002|BEIJING<br>Just replace the default value 10001 (which means New York) to your locCode value in the file plugin.js<br>Then open a new windows to see if it works!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/05/14/a-trick-to-ie7pro-plugin-accuweather-user/" data-id="cj2sgynzc0035x78ejneceep3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IE7/">IE7</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-introduce-to-isz-format" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/04/23/introduce-to-isz-format/" class="article-date">
-  <time datetime="2007-04-22T22:46:22.000Z" itemprop="datePublished">2007-04-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/04/23/introduce-to-isz-format/">Introduce to .ISZ format</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>All of you know .ISO formats as disk image file, today I’ll introduce you a new compressed .ISZ format.</p>
-<p>Features:</p>
-<ul>
-<li>Compressed format, you can even split into several parts.</li>
-<li>Open, Burn, Mount on-the-fly as .ISO formats.</li>
-<li>Password protection</li>
-</ul>
-<p>And the specification of .ISZ file format is located <a href="http://www.ezbsystems.com/isz/iszspec.txt" target="_blank" rel="external">here</a> ( plain text ).</p>
-<p>Currently, you can use UltraISO to compress ISO to ISZ, decompress ( maybe you don’t need to ), mount, burn…etc, from version 8.51.</p>
-<p><a href="http://www.daemon-tools.cc" target="_blank" rel="external">Daemon-Tools</a> now supports .ISZ mounting, from version 4.0.9.1.</p>
-<p>An example:</p>
-<p>I’ve made a VS2005 ISO (Intergrated With SP1), it’s about 4Giga large. After compressed to ISZ, the size reduced to half of previous: 2.1G.</p>
-<p>However, the compress ratio depends on your content of image, it’s same as RAR or ZIP, no magic.</p>
-<p>Enjoy it!</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/23/introduce-to-isz-format/" data-id="cj2sgynzb0032x78egkdxytny" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-lighttpd-url-redirect-for-wordpress-permlink-changes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/04/19/lighttpd-url-redirect-for-wordpress-permlink-changes/" class="article-date">
-  <time datetime="2007-04-19T10:10:10.000Z" itemprop="datePublished">2007-04-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/04/19/lighttpd-url-redirect-for-wordpress-permlink-changes/">Lighttpd url-redirect for Wordpress Permlink changes</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>I changed my wordpress blog entry permlink format. But some link to my blog exists on Internet doesn’t work which results in a HTTP 404 error.</p>
-<h3 id="Why-redirect-is-better-then-rewrite"><a href="#Why-redirect-is-better-then-rewrite" class="headerlink" title="Why redirect is better then rewrite"></a>Why redirect is better then rewrite</h3><p>Someone may have the same question, but take it easy, it depends on your decision.</p>
-<p>But rewrite has it’s benefits also, existed link will work without any changes. RSS feed, your live writer(maybe you prefer Word2007? :P) will still work, no need to change the configuration.</p>
-<p>I want all visitors include search engine spiders <strong>get to know</strong> that the permlink changes, that’s why I choose redirect, not rewrite.</p>
-<h3 id="Draft-conf-simple-and-ugly"><a href="#Draft-conf-simple-and-ugly" class="headerlink" title="Draft conf, simple and ugly"></a>Draft conf, simple and ugly</h3><p>For example, <a href="http://feuvan.net/wordpress/?p=107" target="_blank" rel="external">http://feuvan.net/wordpress/?p=107</a> now should be <a href="http://blog.feuvan.net/index.php/2007/03/10/win-ce-platform-builder-60-evalutation-offline-download.html" target="_blank" rel="external">http://blog.feuvan.net/index.php/2007/03/10/win-ce-platform-builder-60-evalutation-offline-download.html</a>, then I have to configure my lighttpd configure like these.</p>
-<blockquote>$HTTP[“url”] =~ “^/wordpress” {<br>url.redirect =(<br>“^/wordpress/(.*)$” =&gt; “<a href="http://blog.feuvan.net/index.php/" target="_blank" rel="external">http://blog.feuvan.net/index.php/</a>$1”<br>)<br>}<br>&gt;<br>&gt; </blockquote>
-
-<p>But some links like <a href="http://feuvan.net/wordpress/index.php?p=56" target="_blank" rel="external">http://feuvan.net/wordpress/index.php?p=56</a> will be redirected to <a href="http://blog.feuvan.net/index.php/index.php?p=56" target="_blank" rel="external">http://blog.feuvan.net/index.php/index.php?p=56</a>, it’s ugly, er……</p>
-<h3 id="More-clean-conf-file"><a href="#More-clean-conf-file" class="headerlink" title="More clean conf file"></a>More clean conf file</h3><p>So here we have a newer configure file:</p>
-<blockquote>$HTTP[“url”] =~ “^/wordpress” {<br>url.redirect =(<br>“^/wordpress/index.php?(.<em>)$” =&gt; “<a href="http://blog.feuvan.net/index.php/" target="_blank" rel="external">http://blog.feuvan.net/index.php/</a>$1”,<br>“^/wordpress/(.</em>)$” =&gt; “<a href="http://blog.feuvan.net/index.php/" target="_blank" rel="external">http://blog.feuvan.net/index.php/</a>$1”<br>)<br>}<br>&gt;<br>&gt; </blockquote>
-
-<p>Now the old link will be redirected to <a href="http://blog.feuvan.net/index.php/?p=56" target="_blank" rel="external">http://blog.feuvan.net/index.php/?p=56</a>.</p>
-<h3 id="Furthermore"><a href="#Furthermore" class="headerlink" title="Furthermore"></a>Furthermore</h3><p>Wait, why not redirect to the new permlink directly?</p>
-<p>Maybe I can throw out a solution.</p>
-<h3 id="NOTE"><a href="#NOTE" class="headerlink" title="NOTE:"></a>NOTE:</h3><p>You should enable mod_redirect to make the configuration works for you.</p>
-<p>The article is specified to lighttpd 1.4.x series.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/19/lighttpd-url-redirect-for-wordpress-permlink-changes/" data-id="cj2sgynz7002sx78er6gsehfm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lighttpd/">lighttpd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-new-library-classes-in-orcas" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2007/04/19/new-library-classes-in-orcas/" class="article-date">
-  <time datetime="2007-04-19T01:02:48.000Z" itemprop="datePublished">2007-04-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Default/">Default</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2007/04/19/new-library-classes-in-orcas/">New Library Classes in &quot;Orcas&quot;</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>.NET Framework 3.5 is scheduled to be shipped with “Orcas” later 2007 or early 2008. “Orcas” is the codename of Microsoft’s next generation of the heavy and effective IDE Visual Studio 2007.</p>
-<p>According to Microsoft site, the new .NET Framework has been divided into two parts: red bits and green bits. The red bits is backward-compatible 3.0 netFX libraries, while the green bits is totally new assemblies with some extra new features including:</p>
-<ul>
-<li>A new add-in hosting model, which was discussed in the last two editions of CLR Inside Out  </li>
-<li>Support for the Suite B set of cryptographic algorithms, as specified by the National Security Agency (NSA)  </li>
-<li>Support for big integers  </li>
-<li>A high-performance set collection  </li>
-<li>Support for anonymous and named pipes  </li>
-<li>Improved time zone support  </li>
-<li>Lightweight reader/writer lock classes  </li>
-<li>Better integration with Event Tracing for Windows® (ETW), including ETW provider and ETW trace listener APIs</li>
-</ul>
-<h3 id="Suite-B-Implementations"><a href="#Suite-B-Implementations" class="headerlink" title="Suite B Implementations"></a>Suite B Implementations</h3><p>Suite B standard is from <a href="http://www.nsa.gov/ia/industry/crypto_suite_b.cfm" target="_blank" rel="external">NSA,</a> including these implementations:</p>
-<ul>
-<li>The Advanced Encryption Standard (AES) with key sizes of 128 and 256 bits for encryption  </li>
-<li>The Secure Hash Algorithm (SHA-256 and SHA-384) for hashing  </li>
-<li>The Elliptic Curve Digital Signature Algorithm (ECDSA) using curves of 256-bit and 384-bit prime moduli for signing  </li>
-<li>Elliptic Curve Diffie-Hellman (ECDH) using curves of 256 and 384-bit prime moduli for key exchange/secret agreement</li>
-</ul>
-<p>The new .NET Framework provides these implementations, and also a new class named CngKey:</p>
-<blockquote>To support our new CNG-based managed cryptography classes, we’ve added a CngKey class to abstract the storage and usage of CNG keys. CNG keys work similarly to key containers in today’s Crypto API (CAPI)—they allow you to store a key pair or a public key securely and refer to it using a simple string name. You can use CngKey objects when working with the ECDsaCng and ECDiffieHellmanCng classes.<br>&gt;<br>&gt; You can also use the CngKey class directly to perform many operations, including opening, creating, deleting, and exporting keys. If we don’t have a managed API for the operation you want, you can get to the underlying key handle to use when calling Win32® APIs directly.<br>&gt;<br>&gt; </blockquote>
-
-<h3 id="Better-Integer-Support-BigInteger"><a href="#Better-Integer-Support-BigInteger" class="headerlink" title="Better Integer Support: BigInteger"></a>Better Integer Support: BigInteger</h3><p>Now you can have the BigInteger class with these operation supports:</p>
-<ul>
-<li>Abs (returns the absolute value for a given BigInteger)  </li>
-<li>Compare (compares two BigIntegers)  </li>
-<li>Divide (returns the quotient of two BigIntegers)  </li>
-<li>DivRem (returns both the quotient and the remainder of two BigIntegers)  </li>
-<li>Equals (returns true if two BigIntegers have the same value)  </li>
-<li>GreatestCommonDivisor (returns the maximum number that is a divisor of both BigIntegers)  </li>
-<li>ModPow (returns one BigInteger raised to the power of another BigInteger modulo a third; the exponent cannot be negative)  </li>
-<li>Pow (returns one BigInteger raised to the power of another; the exponent cannot be negative)  </li>
-<li>Remainder (returns the remainder of dividing one BigInteger by another)  </li>
-</ul>
-<h3 id="A-New-High-Performance-Collection-Class-HashSet"><a href="#A-New-High-Performance-Collection-Class-HashSet" class="headerlink" title="A New High-Performance Collection Class: HashSet"></a>A New High-Performance Collection Class: HashSet</h3><p>The new class HashSet was added to System.Collection.Generic namespace as a unordered generic high-performance collections that contains unique elements. It implements all the standard collection methods (such as Add, Remove, and Contains) and provides several set operations (including union, intersection, and symmetric difference). It’s easy to use and with high-performance.</p>
-<h3 id="Pipes-System-IO-Pipes"><a href="#Pipes-System-IO-Pipes" class="headerlink" title="Pipes: System.IO.Pipes"></a>Pipes: System.IO.Pipes</h3><p>Both anonymous and named pipes are supported. Now nearly all the pipe functionality provided by Windows are exposed. Now it’s easy to achieve IPC from managed code. If you have experience with Windows native pipes, you will get no trouble to start with the new managed class.</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>We can expect more complete .NET Framework covering your industry, commercial, personal development requirements. As Microsoft has been described, .NET Framework will as last cover what Win32 SDK covers. It’s not rumor or business advertisement, I believe managed code will be <em>natively</em> supported by OS one day, neither .NET nor Java, or some other languages.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/19/new-library-classes-in-orcas/" data-id="cj2sgynz8002wx78efc4n9jgb" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dotNET/">dotNET</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-surf-the-internet-anonymously" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -417,7 +93,7 @@ sc start beep</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/19/surf-the-internet-anonymously/" data-id="cj2sgynza002yx78ezhaajyqm" class="article-share-link">Share</a>
+      <a data-url="http://feuvan.github.io/2007/04/19/surf-the-internet-anonymously/" data-id="cj2si1ivj002y308euogofgcf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
@@ -473,7 +149,7 @@ sc start beep</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/16/configure-nginx-as-front-end-web-server/" data-id="cj2sgynz5002mx78elezu4s6a" class="article-share-link">Share</a>
+      <a data-url="http://feuvan.github.io/2007/04/16/configure-nginx-as-front-end-web-server/" data-id="cj2si1ive002q308ejxxxu5mo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lighttpd/">lighttpd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li></ul>
@@ -517,7 +193,7 @@ sc start beep</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/12/microsoft-wga-team-responds-to-reported-oem-bios-hacks/" data-id="cj2sgynz6002px78eq17rph46" class="article-share-link">Share</a>
+      <a data-url="http://feuvan.github.io/2007/04/12/microsoft-wga-team-responds-to-reported-oem-bios-hacks/" data-id="cj2si1ivc002n308elpf11pyr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -570,7 +246,7 @@ sc start beep</code></p>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2007/04/10/scanner-starts/" data-id="cj2sgynz1002gx78e2rso9l4m" class="article-share-link">Share</a>
+      <a data-url="http://feuvan.github.io/2007/04/10/scanner-starts/" data-id="cj2si1ivb002j308ewxjdfvnv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OVAL/">OVAL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oscanner/">oscanner</a></li></ul>
@@ -582,10 +258,309 @@ sc start beep</code></p>
 
 
   
+    <article id="post-key-stroking-in-window-mobile-dev" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/09/key-stroking-in-window-mobile-dev/" class="article-date">
+  <time datetime="2007-04-09T04:55:09.000Z" itemprop="datePublished">2007-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/09/key-stroking-in-window-mobile-dev/">Key stroking simulation in Windows Mobile Dev</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Let’s talk the topic directly. keybd_event() can send key board events, which is available in WinCE 1.0 and later. The Win32 version of the function is also available in win9x/nt3.1, so it’s toooold. You can also use PostKeybdMessage available after WinCE 2.0.</p>
+<p>keybd_event taks four parameters.</p>
+<blockquote><strong>VOID keybd_event(</strong><br><strong>BYTE</strong> <em>bVk</em><strong>,</strong><br><strong>BYTE</strong> <em>bScan</em><strong>,</strong><br><strong>DWORD</strong> <em>dwFlags</em><strong>,</strong><br><strong>DWORD</strong> <em>dwExtraInfo </em><br><strong>);</strong><br>&gt;<br>&gt; <em>bVk</em><br>&gt;<br>&gt;     [in] Specifies a virtual-key code. The code must be a value in the range 1 to 254. For a list of virtual-key codes, see <a href="http://msdn2.microsoft.com/en-us/library/ms927178.aspx" target="_blank" rel="external">Virtual-Key Codes</a>.  <em>bScan</em>      [in] Specifies a hardware scan code for the key.  <em>dwFlags</em>      [in] Specifies various aspects of function operation. An application can use any combination of the following predefined constant values to set the flags.<br>&gt;<br>&gt; Value<br>Description<br>&gt;<br>&gt; KEYEVENTF_EXTENDEDKEY<br>If specified, the scan code will be treated as an extended key by giving it a prefix byte having the value 0xE0 (224).<br>&gt;<br>&gt; KEYEVENTF_KEYUP<br>If specified, the key is being released. If not specified, the key is being pressed.<br>&gt;<br>&gt; KEYEVENTF_SILENT<br>If specified, a keystroke is simulated, but no clicking sound is made.<br>&gt;<br>&gt; <em>dwExtraInfo</em>      [in] Specifies an additional 32-bit value associated with the keystroke.<br>&gt; </blockquote>
+
+<p>In most conditions, you may only need the first and third parameters.</p>
+<p>Virtual-key code:</p>
+<blockquote>VK_0 thru VK_9 are the same as ASCII ‘0’ thru ‘9’ (0x30 - 0x39)<br>VK_A thru VK_Z are the same as ASCII ‘A’ thru ‘Z’ (0x41 - 0x5A)<br>&gt;<br>&gt; You can get others from <a href="http://msdn2.microsoft.com/en-us/library/ms927178.aspx" target="_blank" rel="external">MSDN</a><br>&gt;<br>&gt; </blockquote>
+
+<p>So, this is an simle example of send ‘F’ key press event:</p>
+<blockquote>const byte VK_F = 0x46;<br>&gt;<br>&gt; keybd_event(VK_F, 0, 0, 0); // key pressed<br>keybd_event(VK_F, 0, KEYEVENTF_KEYUP, 0); // key released<br>&gt;<br>&gt; </blockquote>
+
+<p>see also: <a href="http://msdn2.microsoft.com/en-us/library/aa453245.aspx" target="_blank" rel="external">MSDN: keybd_event()</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/09/key-stroking-in-window-mobile-dev/" data-id="cj2si1iv9002g308ez6vty1p9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows-Mobile/">Windows Mobile</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-debian-gnulinux-40-released" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/09/debian-gnulinux-40-released/" class="article-date">
+  <time datetime="2007-04-08T18:38:51.000Z" itemprop="datePublished">2007-04-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/09/debian-gnulinux-40-released/">Debian GNU/Linux 4.0 released</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>The long-waited Debian 4.0 finally released.</p>
+<p><a href="http://www.debian.org/News/2007/20070408" target="_blank" rel="external">http://www.debian.org/News/2007/20070408</a></p>
+<p>The Debian Project is pleased to announce the official release of Debian GNU/Linux version 4.0, codenamed etch, after 21 months of constant development. Debian GNU/Linux is a free operating system which supports a total of eleven processor architectures and includes the KDE, GNOME and Xfce desktop environments. It also features cryptographic software and compatibility with the FHS v2.3 and software developed for version 3.1 of the LSB. </p>
+<p>Using a now fully integrated installation process, Debian GNU/Linux 4.0 comes with out-of-the-box support for encrypted partitions. This release introduces a newly developed graphical frontend to the installation system supporting scripts using composed characters and complex languages; the installation system for Debian GNU/Linux has now been translated to 58 languages. </p>
+<p>Also beginning with Debian GNU/Linux 4.0, the package management system has been improved regarding security and efficiency. Secure APT allows the verification of the integrity of packages downloaded from a mirror. Updated package indices won’t be downloaded in their entirety, but instead patched with smaller files containing only differences from earlier versions. </p>
+<p>Debian GNU/Linux runs on computers ranging from palmtops and handheld systems to supercomputers, and on nearly everything in between. A total of eleven architectures are supported including: Sun SPARC (sparc), HP Alpha (alpha), Motorola/IBM PowerPC (powerpc), Intel IA-32 (i386) and IA-64 (ia64), HP PA-RISC (hppa), MIPS (mips, mipsel), ARM (arm), IBM S/390 (s390) and – newly introduced with Debian GNU/Linux 4.0 – AMD64 and Intel EM64T (amd64). </p>
+<p>Debian GNU/Linux can be installed from various installation media such as DVDs, CDs, USB sticks and floppies, or from the network. GNOME is the default desktop environment and is contained on the first CD. The K Desktop Environment (KDE) and the Xfce desktop can be installed through two new alternative CD images. Also newly available with Debian GNU/Linux 4.0 are multi-arch CDs and DVDs supporting installation of multiple architectures from a single disc. </p>
+<p>Debian GNU/Linux can be downloaded right now via bittorrent (the recommended way), jigdo or HTTP; see <a href="http://www.debian.org/CD/" target="_blank" rel="external">Debian GNU/Linux on CDs</a> for further information. It will soon be available on DVD and CD-ROM from numerous <a href="http://www.debian.org/CD/vendors" target="_blank" rel="external">vendors</a>, too. </p>
+<p>This release includes a number of updated software packages, such as the K Desktop Environment 3.5.5a (KDE), an updated version of the GNOME desktop environment 2.14, the Xfce 4.4 desktop environment, the GNUstep desktop 5.2, X.Org 7.1, OpenOffice.org 2.0.4a, GIMP 2.2.13, Iceweasel (an unbranded version of Mozilla Firefox 2.0.0.3), Icedove (an unbranded version of Mozilla Thunderbird 1.5), Iceape (an unbranded version of Mozilla Seamonkey 1.0.8), PostgreSQL 8.1.8, MySQL 5.0.32, GNU Compiler Collection 4.1.1, Linux kernel version 2.6.18, Apache 2.2.3, Samba 3.0.24, Python 2.4.4 and 2.5, Perl 5.8.8, PHP 4.4.4 and 5.2.0, Asterisk 1.2.13, and more than 18,000 other ready to use software packages. </p>
+<p>Upgrades to Debian GNU/Linux 4.0 from the previous release, Debian GNU/Linux 3.1 codenamed sarge, are automatically handled by the aptitude package management tool for most configurations, and to a certain degree also by the apt-get package management tool. As always, Debian GNU/Linux systems can be upgraded quite painlessly, in place, without any forced downtime, but it is strongly recommended to read the release notes for possible issues. For detailed instructions about installing and upgrading Debian GNU/Linux, please see the <a href="http://www.debian.org/releases/etch/releasenotes" target="_blank" rel="external">release notes</a>. Please note that the release notes will be further improved and translated to additional languages in the coming weeks. </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/09/debian-gnulinux-40-released/" data-id="cj2si1iv8002c308euhkb8t0q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Debian/">Debian</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-wzdftpdcn-starts" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/08/wzdftpdcn-starts/" class="article-date">
+  <time datetime="2007-04-07T21:04:31.000Z" itemprop="datePublished">2007-04-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/08/wzdftpdcn-starts/">wzdftpd.cn starts</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>According to FreeWizard’s post on ServerTechnology/HaPPYNET BBS, I decided to translate some docu of wzdftpd.<br>And welcome to <a href="http://wzdftpd.cn" target="_blank" rel="external">wzdftpd.cn</a>.<br>Note:</p>
+<ul>
+<li>The site faces to Chinese wzdftpd users.</li>
+</ul>
+<ul>
+<li>The construction is started yesterday. So a lot of work is to be done.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/08/wzdftpdcn-starts/" data-id="cj2si1iv60029308etqyawqdx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wzdftpd/">wzdftpd</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-faint-linkin-park" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/07/faint-linkin-park/" class="article-date">
+  <time datetime="2007-04-07T00:35:21.000Z" itemprop="datePublished">2007-04-07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/07/faint-linkin-park/">Faint - Linkin Park</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>lyrics:</p>
+<p>I am a little bit of loneliness<br>A little bit of disregard<br>Handful of complaints<br>But I help the fact<br>That everybody can see these scars<br>I am what I want you to want<br>What I want you to feel<br>But its like no matter what I do<br>I can’t convince you<br>To just believe this is real<br>So I let go of watching you<br>Turn your back like you always do<br>Face away and pretend that I’m not<br>But I’ll be here cause your all that I’ve got<br>I can’t feel the way I did before<br>Don’t turn your back on me<br>I won’t be ignored<br>Time won’t tell<br>There’s damage anymore<br>Don’t turn your back on me<br>I won’t be ignored<br>I am a little bit insecure<br>A little unconfident<br>Cause you don’t understand<br>I do what I can<br>But sometimes I don’t make sense<br>What you never want to say<br>But I’ve never had a doubt<br>It’s like no matter what I do<br>I can’t convince you<br>For once just to hear me out<br>So I let go of watching you<br>Turn your back like you always do<br>Face away and pretend that I’m not<br>But I’ll be here cause your all that I’ve got<br>I can’t feel the way I did before<br>Don’t turn your back on me<br>I won’t be ignored<br>Time won’t heal<br>There’s damage anymore<br>Don’t turn your back on me<br>I won’t be ignored<br>Now!<br>Hear me out now<br>Your gonna listen to me like it or not<br>Right now!<br>Hear me out now<br>Your gonna listen to me like it or not<br>Right now..<br>I can’t feel<br>The way I did before<br>Don’t turn your back on me<br>I won’t be ignored!!<br>I can’t feel the way I did before<br>Don’t turn your back on me<br>I won’t be ignored<br>Time won’t tell<br>There’s damage anymore<br>Don’t turn your back on me<br>I won’t be ignored<br>I can’t feel<br>I won’t be ignored<br>Time won’t tell<br>Don’t turn your back on me<br>I won’t be ignored</p>
+<p>END</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/07/faint-linkin-park/" data-id="cj2si1iv20026308e6hqerv2x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-im-a-pig" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/04/im-a-pig/" class="article-date">
+  <time datetime="2007-04-04T07:35:06.000Z" itemprop="datePublished">2007-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/04/im-a-pig/">I&#39;m a pig</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iptables -t mangle -A PREROUTING -s xxx -j ACCEPT<br>iptables -t mangle -A PREROUTING -s yyy -j ACCEPT<br>iptables -t mangle -P PREROUTING DROP<br>iptables -F -t mangle</p>
+<p>the stupid steps make myself and all visitors lockout from fvnbox which hosts feuvan.net and some services.</p>
+<p>Apologies to <a href="http://chaoswar.feuvan.net" target="_blank" rel="external">http://chaoswar.feuvan.net</a> / zzxy.feuvan.net users!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/04/im-a-pig/" data-id="cj2si1iv10024308ex6jjh058" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-google-pinyin-input-method" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2007/04/04/google-pinyin-input-method/" class="article-date">
+  <time datetime="2007-04-03T19:35:57.000Z" itemprop="datePublished">2007-04-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2007/04/04/google-pinyin-input-method/">Google 拼音输入法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://tools.google.com/pinyin" target="_blank" rel="external">http://tools.google.com/pinyin</a></p>
+<p>下载链接：<br><a href="http://dl.google.com/pinyin/GooglePinyinInstaller.exe" target="_blank" rel="external">http://dl.google.com/pinyin/GooglePinyinInstaller.exe</a></p>
+<p>聪明的谷歌拼音输入法五大特色：</p>
+<ul>
+<li><strong>智能组句：</strong>选词准确率高，能聪明地理解您的意图，短句长句都合适。  </li>
+<li><strong>流行词汇：</strong>整合互联网上的流行词汇、热门搜索一网打尽，词组丰富强大。  </li>
+<li><strong>网络同步：</strong>您可以将使用习惯和个人字典同步在 Google 帐号，一个跟您走的个性化输入法。  </li>
+<li><strong>一键搜索：</strong>拼写输入的同时轻点一键即可快捷搜索。输入法结合搜索框一举两得。  </li>
+<li><strong>英文提示：</strong>打英文时只需输入前几个字母，输入法自动提示您可能要找的单字。 </li>
+</ul>
+<p><a href="http://tools.google.com/feature.html" target="_blank" rel="external">查看全部 »</a></p>
+<p><img src="http://tools.google.com/pinyin/images/pinyin_demo.png" alt=""></p>
+<h6 id="系统要求"><a href="#系统要求" class="headerlink" title="系统要求"></a>系统要求</h6><ul>
+<li>Microsoft Windows 2000 SP4 / XP / Vista  </li>
+<li>Internet Explorer 6.0+ </li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://feuvan.github.io/2007/04/04/google-pinyin-input-method/" data-id="cj2si1iuz0021308e0mjsnlvl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Google/">Google</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/page/5/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/5/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -595,7 +570,7 @@ sc start beep</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll-pixyll/">jekyll pixyll</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li></ul>
     </div>
   </div>
 
@@ -605,7 +580,7 @@ sc start beep</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GMA/">GMA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE7/">IE7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE9/">IE9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intel/">Intel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interoperability/">Interoperability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MSI/">MSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mach-O/">Mach-O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OVAL/">OVAL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orca/">Orca</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Parallel/">Parallel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RadioFan/">RadioFan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SNS/">SNS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scroll/">Scroll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synaptics/">Synaptics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TV/">TV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Touchpad/">Touchpad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vista/">Vista</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WLM/">WLM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WPtouch/">WPtouch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WTL/">WTL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Live/">Windows Live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Mobile/">Windows Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XDebug/">XDebug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Framework/">Zend Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ar/">ar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datapipe6/">datapipe6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotNET/">dotNET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/douban-fm/">douban.fm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gadget/">gadget</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gre-ipip-gfw/">gre, ipip, gfw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hulu/">hulu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iTunes/">iTunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll-wordpress/">jekyll wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jiwai/">jiwai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lightsocial/">lightsocial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lighttpd/">lighttpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linode/">linode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lipo/">lipo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mod-extforward/">mod_extforward</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mojiti/">mojiti</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oscanner/">oscanner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phproxy/">phproxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy-cache-lock/">proxy_cache_lock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regsvr32/">regsvr32</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/squid/">squid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trac/">trac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpres/">wordpres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wow/">wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wzdftpd/">wzdftpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzxy/">zzxy</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GMA/">GMA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE7/">IE7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE9/">IE9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intel/">Intel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interoperability/">Interoperability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MSI/">MSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mach-O/">Mach-O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OVAL/">OVAL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orca/">Orca</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Parallel/">Parallel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RadioFan/">RadioFan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SNS/">SNS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scroll/">Scroll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synaptics/">Synaptics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TV/">TV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Touchpad/">Touchpad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vista/">Vista</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WLM/">WLM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WPtouch/">WPtouch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WTL/">WTL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Live/">Windows Live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Mobile/">Windows Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XDebug/">XDebug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Framework/">Zend Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ar/">ar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datapipe6/">datapipe6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotNET/">dotNET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/douban-fm/">douban.fm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gadget/">gadget</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gre-ipip-gfw/">gre, ipip, gfw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hulu/">hulu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iTunes/">iTunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jiwai/">jiwai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lighttpd/">lighttpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linode/">linode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lipo/">lipo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mod-extforward/">mod_extforward</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mojiti/">mojiti</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oscanner/">oscanner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phproxy/">phproxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy-cache-lock/">proxy_cache_lock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regsvr32/">regsvr32</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/squid/">squid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trac/">trac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpres/">wordpres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wow/">wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wzdftpd/">wzdftpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzxy/">zzxy</a></li></ul>
     </div>
   </div>
 
@@ -615,7 +590,7 @@ sc start beep</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ASP-NET/" style="font-size: 10px;">ASP.NET</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/C/" style="font-size: 13.33px;">C#</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/GMA/" style="font-size: 10px;">GMA</a> <a href="/tags/Google/" style="font-size: 13.33px;">Google</a> <a href="/tags/IE7/" style="font-size: 10px;">IE7</a> <a href="/tags/IE9/" style="font-size: 10px;">IE9</a> <a href="/tags/IIS/" style="font-size: 10px;">IIS</a> <a href="/tags/Intel/" style="font-size: 10px;">Intel</a> <a href="/tags/Interoperability/" style="font-size: 10px;">Interoperability</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSI/" style="font-size: 10px;">MSI</a> <a href="/tags/Mach-O/" style="font-size: 10px;">Mach-O</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/OVAL/" style="font-size: 10px;">OVAL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Orca/" style="font-size: 10px;">Orca</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Parallel/" style="font-size: 10px;">Parallel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RadioFan/" style="font-size: 10px;">RadioFan</a> <a href="/tags/SNS/" style="font-size: 11.67px;">SNS</a> <a href="/tags/Scroll/" style="font-size: 10px;">Scroll</a> <a href="/tags/Synaptics/" style="font-size: 10px;">Synaptics</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/Touchpad/" style="font-size: 10px;">Touchpad</a> <a href="/tags/VirtualBox/" style="font-size: 11.67px;">VirtualBox</a> <a href="/tags/Vista/" style="font-size: 11.67px;">Vista</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/WCF/" style="font-size: 10px;">WCF</a> <a href="/tags/WLM/" style="font-size: 11.67px;">WLM</a> <a href="/tags/WPtouch/" style="font-size: 10px;">WPtouch</a> <a href="/tags/WTL/" style="font-size: 10px;">WTL</a> <a href="/tags/Windows-Live/" style="font-size: 10px;">Windows Live</a> <a href="/tags/Windows-Mobile/" style="font-size: 13.33px;">Windows Mobile</a> <a href="/tags/XDebug/" style="font-size: 10px;">XDebug</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/Zend-Framework/" style="font-size: 10px;">Zend Framework</a> <a href="/tags/apache/" style="font-size: 11.67px;">apache</a> <a href="/tags/ar/" style="font-size: 10px;">ar</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/datapipe6/" style="font-size: 10px;">datapipe6</a> <a href="/tags/dotNET/" style="font-size: 18.33px;">dotNET</a> <a href="/tags/douban-fm/" style="font-size: 10px;">douban.fm</a> <a href="/tags/gadget/" style="font-size: 10px;">gadget</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/gre-ipip-gfw/" style="font-size: 10px;">gre, ipip, gfw</a> <a href="/tags/hulu/" style="font-size: 10px;">hulu</a> <a href="/tags/iOS/" style="font-size: 11.67px;">iOS</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/jekyll-wordpress/" style="font-size: 10px;">jekyll wordpress</a> <a href="/tags/jiwai/" style="font-size: 10px;">jiwai</a> <a href="/tags/lightsocial/" style="font-size: 10px;">lightsocial</a> <a href="/tags/lighttpd/" style="font-size: 15px;">lighttpd</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/lipo/" style="font-size: 10px;">lipo</a> <a href="/tags/mod-extforward/" style="font-size: 11.67px;">mod_extforward</a> <a href="/tags/mojiti/" style="font-size: 10px;">mojiti</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nginx/" style="font-size: 13.33px;">nginx</a> <a href="/tags/oscanner/" style="font-size: 10px;">oscanner</a> <a href="/tags/phproxy/" style="font-size: 10px;">phproxy</a> <a href="/tags/proxy/" style="font-size: 16.67px;">proxy</a> <a href="/tags/proxy-cache-lock/" style="font-size: 10px;">proxy_cache_lock</a> <a href="/tags/regsvr32/" style="font-size: 10px;">regsvr32</a> <a href="/tags/squid/" style="font-size: 10px;">squid</a> <a href="/tags/subversion/" style="font-size: 13.33px;">subversion</a> <a href="/tags/trac/" style="font-size: 10px;">trac</a> <a href="/tags/wordpres/" style="font-size: 10px;">wordpres</a> <a href="/tags/wordpress/" style="font-size: 20px;">wordpress</a> <a href="/tags/wow/" style="font-size: 10px;">wow</a> <a href="/tags/wzdftpd/" style="font-size: 10px;">wzdftpd</a> <a href="/tags/zzxy/" style="font-size: 10px;">zzxy</a>
+      <a href="/tags/ASP-NET/" style="font-size: 10px;">ASP.NET</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/C/" style="font-size: 14px;">C#</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/GMA/" style="font-size: 10px;">GMA</a> <a href="/tags/Google/" style="font-size: 14px;">Google</a> <a href="/tags/IE7/" style="font-size: 10px;">IE7</a> <a href="/tags/IE9/" style="font-size: 10px;">IE9</a> <a href="/tags/IIS/" style="font-size: 10px;">IIS</a> <a href="/tags/Intel/" style="font-size: 10px;">Intel</a> <a href="/tags/Interoperability/" style="font-size: 10px;">Interoperability</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSI/" style="font-size: 10px;">MSI</a> <a href="/tags/Mach-O/" style="font-size: 10px;">Mach-O</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/OVAL/" style="font-size: 10px;">OVAL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Orca/" style="font-size: 10px;">Orca</a> <a href="/tags/PHP/" style="font-size: 16px;">PHP</a> <a href="/tags/Parallel/" style="font-size: 10px;">Parallel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RadioFan/" style="font-size: 10px;">RadioFan</a> <a href="/tags/SNS/" style="font-size: 12px;">SNS</a> <a href="/tags/Scroll/" style="font-size: 10px;">Scroll</a> <a href="/tags/Synaptics/" style="font-size: 10px;">Synaptics</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/Touchpad/" style="font-size: 10px;">Touchpad</a> <a href="/tags/VirtualBox/" style="font-size: 12px;">VirtualBox</a> <a href="/tags/Vista/" style="font-size: 12px;">Vista</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/WCF/" style="font-size: 10px;">WCF</a> <a href="/tags/WLM/" style="font-size: 12px;">WLM</a> <a href="/tags/WPtouch/" style="font-size: 10px;">WPtouch</a> <a href="/tags/WTL/" style="font-size: 10px;">WTL</a> <a href="/tags/Windows-Live/" style="font-size: 10px;">Windows Live</a> <a href="/tags/Windows-Mobile/" style="font-size: 14px;">Windows Mobile</a> <a href="/tags/XDebug/" style="font-size: 10px;">XDebug</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/Zend-Framework/" style="font-size: 10px;">Zend Framework</a> <a href="/tags/apache/" style="font-size: 12px;">apache</a> <a href="/tags/ar/" style="font-size: 10px;">ar</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/datapipe6/" style="font-size: 10px;">datapipe6</a> <a href="/tags/dotNET/" style="font-size: 20px;">dotNET</a> <a href="/tags/douban-fm/" style="font-size: 10px;">douban.fm</a> <a href="/tags/gadget/" style="font-size: 10px;">gadget</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/gre-ipip-gfw/" style="font-size: 10px;">gre, ipip, gfw</a> <a href="/tags/hulu/" style="font-size: 10px;">hulu</a> <a href="/tags/iOS/" style="font-size: 12px;">iOS</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/jiwai/" style="font-size: 10px;">jiwai</a> <a href="/tags/lighttpd/" style="font-size: 16px;">lighttpd</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/lipo/" style="font-size: 10px;">lipo</a> <a href="/tags/mod-extforward/" style="font-size: 12px;">mod_extforward</a> <a href="/tags/mojiti/" style="font-size: 10px;">mojiti</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nginx/" style="font-size: 14px;">nginx</a> <a href="/tags/oscanner/" style="font-size: 10px;">oscanner</a> <a href="/tags/phproxy/" style="font-size: 10px;">phproxy</a> <a href="/tags/proxy/" style="font-size: 18px;">proxy</a> <a href="/tags/proxy-cache-lock/" style="font-size: 10px;">proxy_cache_lock</a> <a href="/tags/regsvr32/" style="font-size: 10px;">regsvr32</a> <a href="/tags/squid/" style="font-size: 10px;">squid</a> <a href="/tags/subversion/" style="font-size: 14px;">subversion</a> <a href="/tags/trac/" style="font-size: 10px;">trac</a> <a href="/tags/wordpres/" style="font-size: 10px;">wordpres</a> <a href="/tags/wordpress/" style="font-size: 18px;">wordpress</a> <a href="/tags/wow/" style="font-size: 10px;">wow</a> <a href="/tags/wzdftpd/" style="font-size: 10px;">wzdftpd</a> <a href="/tags/zzxy/" style="font-size: 10px;">zzxy</a>
     </div>
   </div>
 
@@ -624,7 +599,7 @@ sc start beep</code></p>
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">August 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01/">January 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04/">April 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/12/">December 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/10/">October 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/09/">September 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/08/">August 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/06/">June 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/05/">May 2006</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">August 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01/">January 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04/">April 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/12/">December 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/10/">October 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/09/">September 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/08/">August 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/06/">June 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/05/">May 2006</a></li></ul>
     </div>
   </div>
 
@@ -637,10 +612,6 @@ sc start beep</code></p>
       <ul>
         
           <li>
-            <a href="/2017/05/17/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
             <a href="/2016/05/27/update-build-gre-tunnel-to-break-wall/">Update on Building GRE Tunnel to break wall</a>
           </li>
         
@@ -649,11 +620,15 @@ sc start beep</code></p>
           </li>
         
           <li>
-            <a href="/2015/07/11/announcing-pixyll-version-2/">Announcing Version 2.0</a>
+            <a href="/2013/07/12/nginx-proxy-cache-lock/">Nginx proxy_cache_lock</a>
           </li>
         
           <li>
-            <a href="/2015/07/10/migrated-to-jekyll/">Migrated to Jekyll</a>
+            <a href="/2013/07/04/tinyproxy-in-go/">TinyProxy in Go</a>
+          </li>
+        
+          <li>
+            <a href="/2012/02/29/why-ide-matters/">Why IDE matters</a>
           </li>
         
       </ul>
