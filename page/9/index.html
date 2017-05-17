@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/9/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-php-520" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/11/03/php-520/" class="article-date">
+  <time datetime="2006-11-02T22:35:00.000Z" itemprop="datePublished">2006-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/11/03/php-520/">PHP 5.2.0</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>比较重要的改进:</p>
+<p>增加 RFC1867 文件上传进度的 hook<br>JSON 和 ZIP 模块，前者默认启用<br>Windows版本支持 Apache 2.2 mod<br>PDO，PCRE，libsqlite，libmysql，openssl等更新与改进</p>
+<p>最期待就是文件上传进度的 tracking 了<br>终于official了……</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/11/03/php-520/" data-id="cj2sgynxz000qx78esbbqvyfl" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-auth-mod-changes-between-apache2-0-x-apache2-2-x" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/10/25/auth-mod-changes-between-apache2-0-x-apache2-2-x/" class="article-date">
+  <time datetime="2006-10-24T22:44:04.000Z" itemprop="datePublished">2006-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/10/25/auth-mod-changes-between-apache2-0-x-apache2-2-x/">apache2.0.x -&gt; apache2.2.x 的认证模块变化</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Mars:/opt/trac# apache2ctl -M<br>……<br>auth_basic_module (shared)<br>authn_file_module (shared)<br>authz_host_module (shared)<br>authz_user_module (shared)<br>authz_svn_module (shared)<br>……<br>相对于2.0，2.2的身份和权限控制更加精细<br>当然这也是一大进步 </p>
+<p>刚刚升级到2.2的时候可能会不太习惯<br>原来的配置文件很可能出错<br>对于普通大众最常用的AuthType Basic + htpasswd格式密码文件来说<br>以下模块是需要加载的<br>auth_basic，用于basic方式认证<br>authn_file，提供基于文件的认证方式，其他还有dbm，dbd，ldap等。<br>在配置中加入AuthBasicProvider file启用这个module<br>由于这也是默认的Basic认证方式<br>所以也可以不写这行配置，和2.0配置文件兼容<br>authz_user，Require valid-user这样的配置需要这个module<br>加载了这些module之后基本就可以和以前一样工作了</p>
+<p>authn是认证支持模块<br>共有authn_alias，authz_anon，authz_dbd，authz_dbm，authz_default，authz_file六个模块<br>具体用法可以查看官方网站的解释</p>
+<p>authz是授权支持模块<br>共有authz_dbm，authz_default，authz_groupfile，authz_host，authz_owner，authz_user六个模块</p>
+<p>authnz是认证和授权做在一起，只有一个authnz_ldap<br>auth_basic，然后用AuthBasicProvider ldap调用</p>
+<p>另外，授权支持模块中<br>authz_host提供了Order allow,deny的基于主机名，IP或者环境变量认证<br>Order Allow,Deny<br>Allow from 10.10.1.0/24, feuvan.net<br>Deny from all</p>
+<p>至于那个authz_svn是给svn认证用的。。<br>不知道是什么的就忽略我说的话吧<br>我就是在升级的时候svn和trac出错才来折腾的</p>
+<p>Apache2 越来越高级配置越来越复杂<br>难怪那么多轻量级的应用转向 lighttpd 了<br>期待 lighttpd 1.5</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/10/25/auth-mod-changes-between-apache2-0-x-apache2-2-x/" data-id="cj2sgynxx000nx78ea91m168s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apache/">apache</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xiaonei5q" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/10/24/xiaonei5q/" class="article-date">
+  <time datetime="2006-10-23T21:16:02.000Z" itemprop="datePublished">2006-10-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/10/24/xiaonei5q/">xiaonei5q?</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Myspace即将入侵之际<br>我在水木社区看到xiaonei和5q联姻的消息<br>还有whois记录为证<br>我也查询了一下<br>Registrant:<br>Chen, Joseph<br>ATTN: XIAONEI.COM<br>c/o Network Solutions<br>P.O. Box 447<br>Herndon, VA. 20172-0447<br>Domain Name: XIAONEI.COM<br>Administrative Contact, Technical Contact:<br>Chen, Joseph zp6va7bv59w@networksolutionsprivateregistration.com<br>CIAC<br>ATTN: XIAONEI.COM<br>c/o Network Solutions<br>P.O. Box 447<br>Herndon, VA 20172-0447<br>570-708-8780<br>Record expires on 18-Nov-2007.<br>Record created on 23-Oct-2006.<br>Database last updated on 24-Oct-2006 00:46:35 EDT.   </p>
+<p>有人说Joseph Chen就是陈一舟<br>但我怎么觉得像是networksolutionsprivateregistration的职员呢   </p>
+<p>不过如果联姻的事情是真的<br>10.24这天真的发生了很多事情<br>Firefox 2.0<br>Fedora Core 6<br>xiaonei5q</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/10/24/xiaonei5q/" data-id="cj2sgynxw000lx78edgtezz6s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SNS/">SNS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-lua-e69c88e4baaee7bc96e7a88be8afade8a880" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/10/18/lua-e69c88e4baaee7bc96e7a88be8afade8a880/" class="article-date">
+  <time datetime="2006-10-18T04:05:09.000Z" itemprop="datePublished">2006-10-18</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/10/18/lua-e69c88e4baaee7bc96e7a88be8afade8a880/">Lua 月亮编程语言</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>……<br>巴西人真有想象力。</p>
+<p><a href="http://lua.org" target="_blank" rel="external">Lua.org</a><br>页面很朴素</p>
+<p>拿它来做游戏的控制脚本很多<br>官方网站上也有很多例子</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/10/18/lua-e69c88e4baaee7bc96e7a88be8afade8a880/" data-id="cj2sgynxu000ix78eonekk9n0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7bd91e7ab99e8bf81e7a7bbe588b0e696b0ip" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/10/14/e7bd91e7ab99e8bf81e7a7bbe588b0e696b0ip/" class="article-date">
+  <time datetime="2006-10-14T14:12:35.000Z" itemprop="datePublished">2006-10-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/10/14/e7bd91e7ab99e8bf81e7a7bbe588b0e696b0ip/">网站迁移到新IP</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>北京光环新网</p>
+<p>最大的坏处是这对于教育网不是免费IP</p>
+<p>好处是比原先铁通的还快不少</p>
+<p>zzxy.feuvan.net 网页代理服务暂停<br>telnet串联到proxy.zzxy.org:26123继续运行</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/10/14/e7bd91e7ab99e8bf81e7a7bbe588b0e696b0ip/" data-id="cj2sgynxs000gx78e9z09om7h" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-feuvannet-e68f90e9809fefbc8ce6849fe8b0a2e69d9ce680bb" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/09/12/feuvannet-e68f90e9809fefbc8ce6849fe8b0a2e69d9ce680bb/" class="article-date">
+  <time datetime="2006-09-11T17:22:56.000Z" itemprop="datePublished">2006-09-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/09/12/feuvannet-e68f90e9809fefbc8ce6849fe8b0a2e69d9ce680bb/">feuvan.net 提速，感谢杜总</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[feuvan@sns1 feuvan]$ ping feuvan.net<br>PING feuvan.net (222.35.4.57) 56(84) bytes of data.<br>64 bytes from 222.35.4.57: icmp_seq=1 ttl=52 time=5.61 ms<br>64 bytes from 222.35.4.57: icmp_seq=2 ttl=52 time=5.78 ms<br>64 bytes from 222.35.4.57: icmp_seq=3 ttl=52 time=6.80 ms<br>64 bytes from 222.35.4.57: icmp_seq=4 ttl=52 time=7.13 ms<br>64 bytes from 222.35.4.57: icmp_seq=5 ttl=52 time=5.90 ms  </p>
+<p>铁通<br>C:\Documents and Settings\feuvan&gt;ping feuvan.net<br>Pinging feuvan.net [222.35.4.57] with 32 bytes of data:<br>Reply from 222.35.4.57: bytes=32 time=2ms TTL=60<br>Reply from 222.35.4.57: bytes=32 time=3ms TTL=60<br>Reply from 222.35.4.57: bytes=32 time=3ms TTL=60<br>Reply from 222.35.4.57: bytes=32 time=2ms TTL=60  </p>
+<p>网通<br>feuvan@fvn:~$ ping feuvan.net<br>PING feuvan.net (222.35.4.57) 56(84) bytes of data.<br>64 bytes from 222.35.4.57: icmp_seq=1 ttl=50 time=29.8 ms<br>64 bytes from 222.35.4.57: icmp_seq=2 ttl=50 time=23.6 ms<br>64 bytes from 222.35.4.57: icmp_seq=3 ttl=50 time=16.8 ms<br>64 bytes from 222.35.4.57: icmp_seq=4 ttl=50 time=19.6 ms</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/09/12/feuvannet-e68f90e9809fefbc8ce6849fe8b0a2e69d9ce680bb/" data-id="cj2sgynxq000cx78e9l4rc1px" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e7bb99mojitie68993e4b8aae5b9bfe5918a" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/09/11/e7bb99mojitie68993e4b8aae5b9bfe5918a/" class="article-date">
+  <time datetime="2006-09-10T17:53:13.000Z" itemprop="datePublished">2006-09-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/09/11/e7bb99mojitie68993e4b8aae5b9bfe5918a/">给Mojiti打个广告</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为友公司打广告<br><a href="http://www.mojiti.com" target="_blank" rel="external">Mojiti 魔击体</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/09/11/e7bb99mojitie68993e4b8aae5b9bfe5918a/" data-id="cj2sgynxm000ax78e30w71brw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mojiti/">mojiti</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-use-portforwarding-to-solve-svn-ci-problem-to-squid-served-svn-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/08/06/use-portforwarding-to-solve-svn-ci-problem-to-squid-served-svn-server/" class="article-date">
+  <time datetime="2006-08-06T05:18:07.000Z" itemprop="datePublished">2006-08-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/08/06/use-portforwarding-to-solve-svn-ci-problem-to-squid-served-svn-server/">端口转发解决位于Squid等代理后无法从SVN server ci 的问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>发现只能co，不能ci<br>TortoiseSVN报MKACTIVITY…400 bad request  </p>
+<p>Google之后发现问题所在<br><a href="http://subversion.tigris.org/faq.html#proxy" target="_blank" rel="external">http://subversion.tigris.org/faq.html#proxy</a><br>只要在我的svn主机前的squid里加上下面这行配置就ok<br>extension_methods REPORT MERGE MKACTIVITY CHECKOUT  </p>
+<p>但是我接触不到squid<br>于是用了ssh的端口转发<br>Dev SVN Server<br>localhost:8000  localhost:80<br>URL of Repository从原来的<br><a href="http://svnserver.xxx.net/repos/Projectname" target="_blank" rel="external">http://svnserver.xxx.net/repos/Projectname</a><br>变成<br><a href="http://localhost:8000/repos/Projectname" target="_blank" rel="external">http://localhost:8000/repos/Projectname</a>  </p>
+<p>问题解决<br>比原来不方便的一点是要开着secure crt或者其他工具维持端口转发<br>一点额外的好处是安全性–SSH</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/08/06/use-portforwarding-to-solve-svn-ci-problem-to-squid-served-svn-server/" data-id="cj2sgynxj0006x78egdc3zlsq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/squid/">squid</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/subversion/">subversion</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-e5a881e4bfa1e7bd91e5ae89e68b9be88198e9ab98e7baa7e8bdafe4bbb6e5bc80e58f91e5b7a5e7a88be5b888" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/06/21/e5a881e4bfa1e7bd91e5ae89e68b9be88198e9ab98e7baa7e8bdafe4bbb6e5bc80e58f91e5b7a5e7a88be5b888/" class="article-date">
+  <time datetime="2006-06-20T16:54:04.000Z" itemprop="datePublished">2006-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/06/21/e5a881e4bfa1e7bd91e5ae89e68b9be88198e9ab98e7baa7e8bdafe4bbb6e5bc80e58f91e5b7a5e7a88be5b888/">威信网安招聘高级软件开发工程师</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Help shape the security process management system!   </p>
+<p>Our company is focused on fulfilling the mission of enabling businesses throughout the world to realize their full potential by manage the security processes. We develop the high scalable, high stable security online services, and are looking to hire passionate and dedicated people to work on significant future releases.</p>
+<p>As the senior SDE, you will be responsible for the work on future versions of technology for Windows, Linux, and mobile devices. Help design and implement next-generation scan engine features, create an extensible service platform, and help define the user experience for the security process. You will provide technical direction, mentoring, and leadership to other team members through difficult processes or new approaches; identify and solve complex problems; help design, spec, schedule, and implement quality components and features; make implementation trade-offs; write tight code; debug existing code; work efficiently with other disciplines, and in a self-directed manner; and participate in the hiring process.</p>
+<p>Qualification  </p>
+<p>At least one full software product life cycle (&gt; 3-person project)  </p>
+<p>Strong C/C++ development and debugging skills with solid background in CS or related areas  </p>
+<p>Strong server experience including .NET, C#, SQL, and security  </p>
+<p>Good communication skills  </p>
+<p>Independent ability to quickly come up to speed on new technologies and unfamiliar code  </p>
+<p>Passion for the user experience and customer satisfaction  </p>
+<p>A BA/BS in Computer Science or related technical discipline is required</p>
+<p>Pluses  </p>
+<p>High scalable and stable server experience with C#</p>
+<p>Contact us  </p>
+<p>Dongsheng Plaza Office Tower B #906  </p>
+<p>No.8 ZhongGuanCun East  </p>
+<p>Haidian District  </p>
+<p>Beijing, P.R.China</p>
+<p>E-mail: feuvan@gmail.com<br>                ]]&gt;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/06/21/e5a881e4bfa1e7bd91e5ae89e68b9be88198e9ab98e7baa7e8bdafe4bbb6e5bc80e58f91e5b7a5e7a88be5b888/" data-id="cj2sgynxf0005x78ete7pxrvz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-waiting-for-lighttpd-15x" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2006/06/01/waiting-for-lighttpd-15x/" class="article-date">
+  <time datetime="2006-06-01T15:06:44.000Z" itemprop="datePublished">2006-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Default/">Default</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2006/06/01/waiting-for-lighttpd-15x/">期待lighttpd 1.5.x</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>TODOS  </p>
+<p>1.5.x is meant to  </p>
+<pre><code>* fix internals which are blocking us from moving forward.  
+
+* do big changes that can&apos;t be done on 1.4.x-stable branch.  
+
+* merge most if not all duplicated code, which helps a lot on code maintaining/improving   
+</code></pre><p>the list below is meant for discussion.  </p>
+<pre><code>* combine mod_fastcgi, mod_cgi, mod_scgi and mod_proxy into mod_proxy_core and protocols around it. They all cut&apos;n&apos;pasted from mod_fastcgi anyway.  
+
+      o the core provides  
+
+            + config handling  
+
+            + connect/retry on failure  
+
+            + fork/restart worker child on dead. (easier to improve native win32 support)  
+
+            + balancing  
+
+            + x-sendfile   
+
+      o the protocol backends take care of  
+
+            + preparing the environment (most cgi env code can be shared)  
+
+            + encode/decode data  
+
+            + handle io   
+
+* introduce a new io-subsystem which allows filtering content incoming and outgoing data  
+
+      o mod_uploadprogress can track the progress of an upload  
+
+      o mod_deflate can compress content  
+
+      o mod_multiplex can reroute content to other connections  
+
+      o mod_layout can replace tags in the outgoing stream  
+
+      o consider support for asynchronous file io (most likely emulated using threads rather than native aio calls)   
+
+* make the core aware of max-workers  
+
+      o combines server-status  
+
+      o synchroniced logfiles  
+
+      o perhaps make it memcache/shm/mmap based for cluster-wide stats   
+
+* combine most of config handling into core, including:  
+
+      o alloc/free plugin data  
+
+      o init default values  
+
+      o insert values from config (into plugin data)  
+
+      o patch(pick) values from plugin data for connection. this is done by calling a function ptr, but we can kill the string comparisons, lower or higher performance?   
+
+* apply %n to other config option. (such as document root. user might get confused what do or doesn&apos;t support %n, but it&apos;s seems hard to apply all the options.)  
+
+* find a way to solve module order problem:  
+
+      o sort the &quot;user enabled module&quot; by the builtin &quot;ordered module list&quot;, but 3rd party module have no luck on this way.  
+
+      o or add more &quot;handling stages&quot;, and depends on &quot;stage order&quot; instead of &quot;module order&quot;. this is a bit too complex.  
+
+      o or ... (and your solution here)                ]]&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2006/06/01/waiting-for-lighttpd-15x/" data-id="cj2sgynxe0004x78e0k9ir6cx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/page/8/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Default/">Default</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jekyll-pixyll/">jekyll pixyll</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Apple/">Apple</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Debian/">Debian</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GMA/">GMA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Google/">Google</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE7/">IE7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IE9/">IE9</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IIS/">IIS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Intel/">Intel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Interoperability/">Interoperability</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MSI/">MSI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mach-O/">Mach-O</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mobile/">Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OVAL/">OVAL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Objective-C/">Objective-C</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Orca/">Orca</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PHP/">PHP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Parallel/">Parallel</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/RadioFan/">RadioFan</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SNS/">SNS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Scroll/">Scroll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Synaptics/">Synaptics</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TV/">TV</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Touchpad/">Touchpad</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VirtualBox/">VirtualBox</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vista/">Vista</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Visual-Studio/">Visual Studio</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WCF/">WCF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WLM/">WLM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WPtouch/">WPtouch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WTL/">WTL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Live/">Windows Live</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Windows-Mobile/">Windows Mobile</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XDebug/">XDebug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XML/">XML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zend-Framework/">Zend Framework</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apache/">apache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ar/">ar</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cache/">cache</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/datapipe6/">datapipe6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dotNET/">dotNET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/douban-fm/">douban.fm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gadget/">gadget</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/golang/">golang</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gre-ipip-gfw/">gre, ipip, gfw</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hulu/">hulu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iTunes/">iTunes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll-wordpress/">jekyll wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jiwai/">jiwai</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lightsocial/">lightsocial</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lighttpd/">lighttpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linode/">linode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lipo/">lipo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mod-extforward/">mod_extforward</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mojiti/">mojiti</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/music/">music</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oscanner/">oscanner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/phproxy/">phproxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy/">proxy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/proxy-cache-lock/">proxy_cache_lock</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regsvr32/">regsvr32</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/squid/">squid</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/subversion/">subversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/trac/">trac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpres/">wordpres</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wow/">wow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wzdftpd/">wzdftpd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/zzxy/">zzxy</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASP-NET/" style="font-size: 10px;">ASP.NET</a> <a href="/tags/Apple/" style="font-size: 10px;">Apple</a> <a href="/tags/C/" style="font-size: 13.33px;">C#</a> <a href="/tags/Debian/" style="font-size: 10px;">Debian</a> <a href="/tags/GMA/" style="font-size: 10px;">GMA</a> <a href="/tags/Google/" style="font-size: 13.33px;">Google</a> <a href="/tags/IE7/" style="font-size: 10px;">IE7</a> <a href="/tags/IE9/" style="font-size: 10px;">IE9</a> <a href="/tags/IIS/" style="font-size: 10px;">IIS</a> <a href="/tags/Intel/" style="font-size: 10px;">Intel</a> <a href="/tags/Interoperability/" style="font-size: 10px;">Interoperability</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MSI/" style="font-size: 10px;">MSI</a> <a href="/tags/Mach-O/" style="font-size: 10px;">Mach-O</a> <a href="/tags/Mobile/" style="font-size: 10px;">Mobile</a> <a href="/tags/OVAL/" style="font-size: 10px;">OVAL</a> <a href="/tags/Objective-C/" style="font-size: 10px;">Objective-C</a> <a href="/tags/Orca/" style="font-size: 10px;">Orca</a> <a href="/tags/PHP/" style="font-size: 15px;">PHP</a> <a href="/tags/Parallel/" style="font-size: 10px;">Parallel</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/RadioFan/" style="font-size: 10px;">RadioFan</a> <a href="/tags/SNS/" style="font-size: 11.67px;">SNS</a> <a href="/tags/Scroll/" style="font-size: 10px;">Scroll</a> <a href="/tags/Synaptics/" style="font-size: 10px;">Synaptics</a> <a href="/tags/TV/" style="font-size: 10px;">TV</a> <a href="/tags/Touchpad/" style="font-size: 10px;">Touchpad</a> <a href="/tags/VirtualBox/" style="font-size: 11.67px;">VirtualBox</a> <a href="/tags/Vista/" style="font-size: 11.67px;">Vista</a> <a href="/tags/Visual-Studio/" style="font-size: 10px;">Visual Studio</a> <a href="/tags/WCF/" style="font-size: 10px;">WCF</a> <a href="/tags/WLM/" style="font-size: 11.67px;">WLM</a> <a href="/tags/WPtouch/" style="font-size: 10px;">WPtouch</a> <a href="/tags/WTL/" style="font-size: 10px;">WTL</a> <a href="/tags/Windows-Live/" style="font-size: 10px;">Windows Live</a> <a href="/tags/Windows-Mobile/" style="font-size: 13.33px;">Windows Mobile</a> <a href="/tags/XDebug/" style="font-size: 10px;">XDebug</a> <a href="/tags/XML/" style="font-size: 10px;">XML</a> <a href="/tags/Zend-Framework/" style="font-size: 10px;">Zend Framework</a> <a href="/tags/apache/" style="font-size: 11.67px;">apache</a> <a href="/tags/ar/" style="font-size: 10px;">ar</a> <a href="/tags/cache/" style="font-size: 10px;">cache</a> <a href="/tags/datapipe6/" style="font-size: 10px;">datapipe6</a> <a href="/tags/dotNET/" style="font-size: 18.33px;">dotNET</a> <a href="/tags/douban-fm/" style="font-size: 10px;">douban.fm</a> <a href="/tags/gadget/" style="font-size: 10px;">gadget</a> <a href="/tags/golang/" style="font-size: 10px;">golang</a> <a href="/tags/gre-ipip-gfw/" style="font-size: 10px;">gre, ipip, gfw</a> <a href="/tags/hulu/" style="font-size: 10px;">hulu</a> <a href="/tags/iOS/" style="font-size: 11.67px;">iOS</a> <a href="/tags/iTunes/" style="font-size: 10px;">iTunes</a> <a href="/tags/jekyll-wordpress/" style="font-size: 10px;">jekyll wordpress</a> <a href="/tags/jiwai/" style="font-size: 10px;">jiwai</a> <a href="/tags/lightsocial/" style="font-size: 10px;">lightsocial</a> <a href="/tags/lighttpd/" style="font-size: 15px;">lighttpd</a> <a href="/tags/linode/" style="font-size: 10px;">linode</a> <a href="/tags/lipo/" style="font-size: 10px;">lipo</a> <a href="/tags/mod-extforward/" style="font-size: 11.67px;">mod_extforward</a> <a href="/tags/mojiti/" style="font-size: 10px;">mojiti</a> <a href="/tags/music/" style="font-size: 10px;">music</a> <a href="/tags/nginx/" style="font-size: 13.33px;">nginx</a> <a href="/tags/oscanner/" style="font-size: 10px;">oscanner</a> <a href="/tags/phproxy/" style="font-size: 10px;">phproxy</a> <a href="/tags/proxy/" style="font-size: 16.67px;">proxy</a> <a href="/tags/proxy-cache-lock/" style="font-size: 10px;">proxy_cache_lock</a> <a href="/tags/regsvr32/" style="font-size: 10px;">regsvr32</a> <a href="/tags/squid/" style="font-size: 10px;">squid</a> <a href="/tags/subversion/" style="font-size: 13.33px;">subversion</a> <a href="/tags/trac/" style="font-size: 10px;">trac</a> <a href="/tags/wordpres/" style="font-size: 10px;">wordpres</a> <a href="/tags/wordpress/" style="font-size: 20px;">wordpress</a> <a href="/tags/wow/" style="font-size: 10px;">wow</a> <a href="/tags/wzdftpd/" style="font-size: 10px;">wzdftpd</a> <a href="/tags/zzxy/" style="font-size: 10px;">zzxy</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/02/">February 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/01/">January 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/12/">December 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2011/01/">January 2011</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/12/">December 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/11/">November 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/08/">August 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/06/">June 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/04/">April 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/03/">March 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/02/">February 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2010/01/">January 2010</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/12/">December 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/09/">September 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/08/">August 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2009/01/">January 2009</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/10/">October 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2008/02/">February 2008</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/11/">November 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/10/">October 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/09/">September 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/08/">August 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/07/">July 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/06/">June 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/05/">May 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/04/">April 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/03/">March 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2007/02/">February 2007</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/12/">December 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/11/">November 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/10/">October 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/09/">September 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/08/">August 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/06/">June 2006</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2006/05/">May 2006</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/05/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/27/update-build-gre-tunnel-to-break-wall/">Update on Building GRE Tunnel to break wall</a>
+          </li>
+        
+          <li>
+            <a href="/2015/10/08/build-gre-tunnel-to-break-wall/">Build GRE tunnel to break wall</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/11/announcing-pixyll-version-2/">Announcing Version 2.0</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/10/migrated-to-jekyll/">Migrated to Jekyll</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
